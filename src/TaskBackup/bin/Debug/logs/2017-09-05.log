@@ -1,0 +1,131 @@
+2017-09-05 10:48:46.8179 TaskBackup.Program Inicio
+2017-09-05 10:48:48.4523 TaskBackup.Program Limpeza de diretório - Inicio
+2017-09-05 10:48:51.0885 TaskBackup.Program Limpeza de diretório - Fim
+2017-09-05 10:48:51.4571 TaskBackup.Program Backup - Inicio
+2017-09-05 10:48:55.1896 TaskBackup.Program Backup - Fim
+2017-09-05 10:48:55.4237 TaskBackup.Program Zip Backup - Inicio
+2017-09-05 10:48:58.8094 TaskBackup.Program Zip Backup - Fim
+2017-09-05 10:48:59.0644 TaskBackup.Program Tranf FTP - Zip Backup - Inicio
+2017-09-05 10:49:01.7712 TaskBackup.Program Tranf FTP - Zip Backup - Fim
+2017-09-05 10:49:02.1360 TaskBackup.Program Limpeza Diretorio Antigos - Inicio
+2017-09-05 10:49:06.2326 TaskBackup.Program Limpeza Diretorio Antigos - FIm
+2017-09-05 10:49:07.4216 TaskBackup.Program Final
+2017-09-05 10:49:21.2150 TaskBackup.Program Inicio
+2017-09-05 10:49:24.0879 TaskBackup.Program Limpeza de diretório - Inicio
+2017-09-05 10:49:26.6065 TaskBackup.Program Limpeza de diretório - Fim
+2017-09-05 10:49:27.1202 TaskBackup.Program Backup - Inicio
+2017-09-05 10:49:31.0303 TaskBackup.Program Backup - Fim
+2017-09-05 10:49:31.5801 TaskBackup.Program Zip Backup - Inicio
+2017-09-05 10:49:34.6575 TaskBackup.Program Zip Backup - Fim
+2017-09-05 10:49:35.2170 TaskBackup.Program Tranf FTP - Zip Backup - Inicio
+2017-09-05 10:49:39.3065 TaskBackup.Program Tranf FTP - Zip Backup - Fim
+2017-09-05 10:49:39.8312 TaskBackup.Program Limpeza Diretorio Antigos - Inicio
+2017-09-05 10:49:43.3275 TaskBackup.Program Limpeza Diretorio Antigos - FIm
+2017-09-05 10:49:44.7019 TaskBackup.Program Final
+2017-09-05 11:42:27.9669 TaskBackup.Program Inicio
+2017-09-05 11:44:28.8461 TaskBackup.Program Inicio
+2017-09-05 11:44:48.6680 TaskBackup.Program Limpeza FTP - Inicio
+2017-09-05 11:45:58.0590 TaskBackup.Program Limpeza FTP - FIM
+2017-09-05 11:46:00.2409 TaskBackup.Program Final
+2017-09-05 11:51:11.3937 TaskBackup.Program Inicio
+2017-09-05 11:51:11.4250 TaskBackup.Program Limpeza de diretório - Inicio
+2017-09-05 11:51:11.4250 TaskBackup.Program Limpeza de diretório - Fim
+2017-09-05 11:51:11.4406 TaskBackup.Program Backup - Inicio
+2017-09-05 11:51:55.5795 TaskBackup.Program Backup - Fim
+2017-09-05 11:51:55.6006 TaskBackup.Program Zip Backup - Inicio
+2017-09-05 11:53:26.5421 TaskBackup.Program Zip Backup - Fim
+2017-09-05 11:53:26.5601 TaskBackup.Program Tranf FTP - Zip Backup - Inicio
+2017-09-05 12:22:51.3693 TaskBackup.Program Tranf FTP - Zip Backup - Fim
+2017-09-05 12:22:51.3849 TaskBackup.Program Limpeza Diretorio Antigos - Inicio
+2017-09-05 12:22:51.3849 TaskBackup.Program Limpeza Diretorio Antigos - FIm
+2017-09-05 12:22:51.4005 TaskBackup.Program Limpeza FTP - Inicio
+2017-09-05 12:22:55.0674 TaskBackup.Program Limpeza FTP - FIM
+2017-09-05 12:22:55.0674 TaskBackup.Program Final
+2017-09-05 12:58:23.4305 TaskBackup.Program Inicio
+2017-09-05 12:58:25.5367 TaskBackup.Program Aplicação não terminou seu ciclo
+2017-09-05 12:58:25.5367 TaskBackup.Program Aplicação não terminou seu ciclo
+2017-09-05 12:59:41.8101 TaskBackup.Program Inicio
+2017-09-05 12:59:44.0387 TaskBackup.Program Aplicação não terminou seu ciclo
+2017-09-05 13:00:09.8642 TaskBackup.Program Inicio
+2017-09-05 13:00:11.0832 TaskBackup.Program Aplicação não terminou seu ciclo
+2017-09-05 13:00:14.2465 TaskBackup.Program Final
+2017-09-05 13:03:31.5637 TaskBackup.Program Inicio
+2017-09-05 13:03:33.1371 TaskBackup.Program Aplicação não terminou seu ciclo
+2017-09-05 13:03:39.3303 TaskBackup.Program Final
+2017-09-05 13:04:56.3843 TaskBackup.Program Inicio
+2017-09-05 13:04:59.5045 TaskBackup.Program Aplicação não terminou seu ciclo
+2017-09-05 13:05:07.3250 TaskBackup.Program Final
+2017-09-05 13:05:56.3164 TaskBackup.Program Inicio
+2017-09-05 13:05:56.3524 TaskBackup.Program Aplicação não terminou seu ciclo
+2017-09-05 13:05:56.3524 TaskBackup.Program Aplicação não terminou seu ciclo
+2017-09-05 13:06:04.9410 TaskBackup.Program Final
+2017-09-05 13:07:35.7243 TaskBackup.Program Inicio 
+2017-09-05 13:07:35.7613 TaskBackup.Program Aplicação não terminou seu ciclo teste de e-mail
+2017-09-05 13:07:35.7613 TaskBackup.Program Aplicação não terminou seu ciclo teste de e-mail
+2017-09-05 13:07:42.4259 TaskBackup.Program Final 
+2017-09-05 13:10:25.0542 TaskBackup.Program Inicio rotina de backup 
+2017-09-05 13:10:30.0054 TaskBackup.Program Aplicação não terminou seu ciclo teste de e-mail
+2017-09-05 13:10:30.0054 TaskBackup.Program Aplicação não terminou seu ciclo teste de e-mail
+2017-09-05 13:10:37.6793 TaskBackup.Program Final rotina de backup 
+2017-09-05 13:10:51.4241 TaskBackup.Program Inicio rotina de backup 
+2017-09-05 13:10:58.2895 TaskBackup.Program Aplicação não terminou seu ciclo teste de e-mail
+2017-09-05 13:10:58.2895 TaskBackup.Program Aplicação não terminou seu ciclo teste de e-mail
+2017-09-05 13:11:08.8261 TaskBackup.Program Final rotina de backup 
+2017-09-05 13:13:21.7550 TaskBackup.Program Inicio rotina de backup 
+2017-09-05 13:13:21.7550 TaskBackup.Program Inicio rotina de backup 
+2017-09-05 13:13:34.7325 TaskBackup.Program Aplicação não terminou seu ciclo teste de e-mail
+2017-09-05 13:13:34.7325 TaskBackup.Program Aplicação não terminou seu ciclo teste de e-mail
+2017-09-05 13:13:34.7325 TaskBackup.Program Aplicação não terminou seu ciclo teste de e-mail
+2017-09-05 13:13:47.8238 TaskBackup.Program Final rotina de backup 
+2017-09-05 13:13:47.8238 TaskBackup.Program Final rotina de backup 
+2017-09-05 13:15:57.4345 TaskBackup.Program Inicio rotina de backup 
+2017-09-05 13:15:57.4345 TaskBackup.Program Inicio rotina de backup 
+2017-09-05 13:16:01.9113 TaskBackup.Program Aplicação não terminou seu ciclo teste de e-mail
+2017-09-05 13:16:01.9113 TaskBackup.Program Aplicação não terminou seu ciclo teste de e-mail
+2017-09-05 13:16:01.9113 TaskBackup.Program Aplicação não terminou seu ciclo teste de e-mail
+2017-09-05 13:16:09.4905 TaskBackup.Program Final rotina de backup 
+2017-09-05 13:16:09.4905 TaskBackup.Program Final rotina de backup 
+2017-09-05 13:18:12.6378 TaskBackup.Program Inicio rotina de backup 
+2017-09-05 13:18:12.6378 TaskBackup.Program Inicio rotina de backup 
+2017-09-05 13:18:16.9368 TaskBackup.Program Aplicação não terminou seu ciclo teste de e-mail
+2017-09-05 13:18:16.9368 TaskBackup.Program Aplicação não terminou seu ciclo teste de e-mail
+2017-09-05 13:18:16.9368 TaskBackup.Program Aplicação não terminou seu ciclo teste de e-mail
+2017-09-05 13:18:25.5540 TaskBackup.Program Final rotina de backup 
+2017-09-05 13:18:25.5540 TaskBackup.Program Final rotina de backup 
+2017-09-05 13:21:39.8268 TaskBackup.Program Inicio rotina de backup 
+2017-09-05 13:21:39.8268 TaskBackup.Program Inicio rotina de backup 
+2017-09-05 13:21:44.4019 TaskBackup.Program Limpeza de diretório - Inicio 
+2017-09-05 13:21:44.4159 TaskBackup.Program Limpeza de diretório - Fim 
+2017-09-05 13:21:44.4239 TaskBackup.Program Backup - Inicio 
+2017-09-05 13:22:27.9430 TaskBackup.Program Backup - Fim 
+2017-09-05 13:22:27.9430 TaskBackup.Program Zip Backup - Inicio 
+2017-09-05 13:24:02.1351 TaskBackup.Program Zip Backup - Fim 
+2017-09-05 13:24:02.1512 TaskBackup.Program Tranf FTP - Zip Backup - Inicio 
+2017-09-05 13:56:06.0287 TaskBackup.Program Tranf FTP - Zip Backup - Fim 
+2017-09-05 13:56:06.0487 TaskBackup.Program Limpeza Diretorio Antigos - Inicio 
+2017-09-05 13:56:06.0487 TaskBackup.Program Limpeza Diretorio Antigos - FIm 
+2017-09-05 13:56:06.0647 TaskBackup.Program Limpeza FTP - Inicio 
+2017-09-05 13:56:07.7188 TaskBackup.Program Limpeza FTP - FIM 
+2017-09-05 13:56:07.7188 TaskBackup.Program Final rotina de backup 
+2017-09-05 13:56:07.7188 TaskBackup.Program Final rotina de backup 
+2017-09-05 15:32:03.7252 TaskBackup.Program Inicio rotina de backup 
+2017-09-05 15:32:03.7252 TaskBackup.Program Inicio rotina de backup 
+2017-09-05 15:32:13.4462 TaskBackup.Program Limpeza de diretório - Inicio 
+2017-09-05 15:32:30.4415 TaskBackup.Program Limpeza de diretório - Fim 
+2017-09-05 15:32:34.6843 TaskBackup.Program Backup - Inicio 
+2017-09-05 15:32:45.9042 TaskBackup.Program System.Data.SqlClient.SqlError: Cannot open backup device 'C:\backup\imperiobkpd20170905.bak'. Operating system error 3(The system cannot find the path specified.). 
+2017-09-05 15:32:45.9042 TaskBackup.Program System.Data.SqlClient.SqlError: Cannot open backup device 'C:\backup\imperiobkpd20170905.bak'. Operating system error 3(The system cannot find the path specified.). 
+2017-09-05 15:32:45.9042 TaskBackup.Program System.Data.SqlClient.SqlError: Cannot open backup device 'C:\backup\imperiobkpd20170905.bak'. Operating system error 3(The system cannot find the path specified.). 
+2017-09-05 15:32:45.9042 TaskBackup.Program System.Data.SqlClient.SqlError: Cannot open backup device 'C:\backup\imperiobkpd20170905.bak'. Operating system error 3(The system cannot find the path specified.). 
+2017-09-05 15:32:55.8433 TaskBackup.Program System.Data.SqlClient.SqlError: BACKUP DATABASE is terminating abnormally. 
+2017-09-05 15:32:55.8433 TaskBackup.Program System.Data.SqlClient.SqlError: BACKUP DATABASE is terminating abnormally. 
+2017-09-05 15:32:55.8433 TaskBackup.Program System.Data.SqlClient.SqlError: BACKUP DATABASE is terminating abnormally. 
+2017-09-05 15:32:55.8433 TaskBackup.Program System.Data.SqlClient.SqlError: BACKUP DATABASE is terminating abnormally. 
+2017-09-05 15:33:11.5914 TaskBackup.Program Backup - Fim 
+2017-09-05 15:34:03.2544 TaskBackup.Program Zip Backup - Inicio 
+2017-09-05 15:34:05.9740 TaskBackup.Program Aplicação não terminou seu ciclo corretamente Não foi possível localizar o arquivo 'C:\backup\imperiobkpd20170905.bak'.
+2017-09-05 15:34:05.9740 TaskBackup.Program Aplicação não terminou seu ciclo corretamente Não foi possível localizar o arquivo 'C:\backup\imperiobkpd20170905.bak'.
+2017-09-05 15:34:05.9740 TaskBackup.Program Aplicação não terminou seu ciclo corretamente Não foi possível localizar o arquivo 'C:\backup\imperiobkpd20170905.bak'.
+2017-09-05 15:34:05.9740 TaskBackup.Program Aplicação não terminou seu ciclo corretamente Não foi possível localizar o arquivo 'C:\backup\imperiobkpd20170905.bak'.
+2017-09-05 15:34:19.7714 TaskBackup.Program Final rotina de backup 
+2017-09-05 15:34:19.7714 TaskBackup.Program Final rotina de backup 

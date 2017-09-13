@@ -1,0 +1,15 @@
+c:\users\uiska\documents\visual studio 2017\Projects\TaskBackup\TaskBackup\bin\Debug\TaskBackup.exe.config
+c:\users\uiska\documents\visual studio 2017\Projects\TaskBackup\TaskBackup\bin\Debug\TaskBackup.exe
+c:\users\uiska\documents\visual studio 2017\Projects\TaskBackup\TaskBackup\bin\Debug\TaskBackup.pdb
+c:\users\uiska\documents\visual studio 2017\Projects\TaskBackup\TaskBackup\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+c:\users\uiska\documents\visual studio 2017\Projects\TaskBackup\TaskBackup\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+c:\users\uiska\documents\visual studio 2017\Projects\TaskBackup\TaskBackup\bin\Debug\Microsoft.SqlServer.Smo.dll
+c:\users\uiska\documents\visual studio 2017\Projects\TaskBackup\TaskBackup\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
+c:\users\uiska\documents\visual studio 2017\Projects\TaskBackup\TaskBackup\bin\Debug\NLog.dll
+c:\users\uiska\documents\visual studio 2017\Projects\TaskBackup\TaskBackup\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+c:\users\uiska\documents\visual studio 2017\Projects\TaskBackup\TaskBackup\bin\Debug\Microsoft.SqlServer.ServiceBrokerEnum.dll
+c:\users\uiska\documents\visual studio 2017\Projects\TaskBackup\TaskBackup\bin\Debug\Microsoft.SqlServer.RegSvrEnum.dll
+c:\users\uiska\documents\visual studio 2017\Projects\TaskBackup\TaskBackup\bin\Debug\NLog.xml
+c:\users\uiska\documents\visual studio 2017\Projects\TaskBackup\TaskBackup\bin\Debug\pt\Microsoft.SqlServer.RegSvrEnum.resources.dll
+c:\users\uiska\documents\visual studio 2017\Projects\TaskBackup\TaskBackup\obj\Debug\TaskBackup.exe
+c:\users\uiska\documents\visual studio 2017\Projects\TaskBackup\TaskBackup\obj\Debug\TaskBackup.pdb
