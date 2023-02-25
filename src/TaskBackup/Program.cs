@@ -1,4 +1,5 @@
-﻿using NLog;
+﻿using Microsoft.SqlServer.Management.Smo;
+using NLog;
 using System;
 using System.Configuration;
 using System.Data.SqlClient;
@@ -17,63 +18,80 @@ namespace TaskBackup
         {
             _logger = LogManager.GetCurrentClassLogger();
 
-            _logger.Warn("Inicio rotina de backup");
+            _logger.Info("Backup Application - Begin");
 
             try
             {
-                var dataAtualNome = DateTime.Today.ToString("yyyyMMdd");
-
-                var backupFileName = ConfigurationManager.AppSettings["BackupDirectory"] +
-                    ConfigurationManager.AppSettings["BackupFileName"] +
-                    dataAtualNome + ".bak";
-
-                var backupZipFileName = ConfigurationManager.AppSettings["BackupDirectory"] +
-                    ConfigurationManager.AppSettings["BackupFileName"] +
-                    dataAtualNome + ".gz";
-
+                var settings = new BackupSettings();
+                                
+                var directoryBackupCleanup = new DirectoryCleanup();
+                directoryBackupCleanup.DeleteFileAlreadyExists(settings.BackupDirectory, settings.CurrentDateName);
                 
-                var directoryBackupCleanup = new DirectoryBackupCleanup();
-
-                directoryBackupCleanup.DirectoryCleanupBeforeBackup(ConfigurationManager.AppSettings["BackupDirectory"],
-                    dataAtualNome);
-
+                new BackupSQLDatabase().BackupDatabase(settings.BackupDatabase, settings.BackupDatabaseName,
+                    settings.BackupDatabaseDescription, settings.BackupFileNameFull);
                 
-                var backupSQLDatabase = new BackupSQLDatabase();
-                backupSQLDatabase.BackupDatabase(ConfigurationManager.AppSettings["BackupDatabase"],
-                    ConfigurationManager.AppSettings["BackupDatabaseName"],
-                    ConfigurationManager.AppSettings["BackupDatabaseDescription"],
-                    backupFileName);
-                
-                var zipFileBackup = new ZipFileBackup();
-                zipFileBackup.ZipBackup(backupFileName, backupZipFileName);
+                new ZipFile().Compress(settings.BackupFileNameFull, settings.BackupZipFileName);
 
-                var ftpTransfBackup = new FTPTransfBackup();
-                ftpTransfBackup.Transf(backupZipFileName);
+                var ftpTransfBackup = new FTPTransf();
+                ftpTransfBackup.Transf(settings.BackupZipFileName);
                 
-                directoryBackupCleanup.DirectoryCleanupOlder(ConfigurationManager.AppSettings["BackupDirectory"],
-                    dataAtualNome);
+                directoryBackupCleanup.DirectoryCleanupOlder(settings.BackupDirectory, settings.CurrentDateName);
 
-                ftpTransfBackup.CleanupBackupOlder(ConfigurationManager.AppSettings["BackupFileName"], dataAtualNome + ".gz");
+                ftpTransfBackup.CleanupBackupOlder(settings.BackupFileName, settings.CurrentDateName + ".gz");
 
             }
             catch (Exception ex)
             {
-                _logger.Fatal(ex, "Aplicação não terminou seu ciclo corretamente");
+                _logger.Fatal(ex, "The application didn't end properly");
             }
             finally
             {
-                _logger.Warn("Final rotina de backup");
+                _logger.Info("Backup Application - End");
             }
 
+        }
+
+
+        public class BackupSettings
+        {
+            public string BackupDirectory { get; private set; }
+            public string BackupFileName { get; private set; }
+
+            public string BackupDatabase { get; private set; }
+
+            public string BackupDatabaseName { get; private set; }
+
+            public string BackupDatabaseDescription {  get; private set; }
+
+            public string CurrentDateName { get; private set; }
+
+            public string BackupFileNameFull { get; private set; }
+
+            public string BackupZipFileName { get; private set; }
+
+            
+
+            public BackupSettings()
+            {
+                BackupDirectory = ConfigurationManager.AppSettings["BackupDirectory"];
+                BackupFileName = ConfigurationManager.AppSettings["BackupFileName"];
+                BackupDatabase = ConfigurationManager.AppSettings["BackupDatabase"];
+                BackupDatabaseName = ConfigurationManager.AppSettings["BackupDatabaseName"];
+                BackupDatabaseDescription = ConfigurationManager.AppSettings["BackupDatabaseDescription"];
+
+                CurrentDateName = DateTime.Today.ToString("yyyyMMdd");
+                BackupFileNameFull = BackupDirectory + BackupFileName + CurrentDateName + ".bak";
+                BackupZipFileName = BackupDirectory + BackupFileName + CurrentDateName + ".gz";
+            }
         }
 
         public class BackupSQLDatabase
         {
             public void BackupDatabase(string databaseName, string backupName, string backupDescription, string backupFilename)
             {
-                _logger.Info("Backup - Inicio");
+                _logger.Info("Backup - Begin");
 
-                var connectionStringProd = ConfigurationManager.ConnectionStrings["imperioPrd"].ConnectionString;
+                var connectionStringProd = ConfigurationManager.ConnectionStrings["DataBase"].ConnectionString;
 
                 using (var con = new SqlConnection(connectionStringProd))
                 {
@@ -99,7 +117,7 @@ namespace TaskBackup
                     con.FireInfoMessageEventOnUserErrors = false;
                 }
 
-                _logger.Info("Backup - Fim");
+                _logger.Info("Backup - End");
             }
 
             private void OnInfoMessage(object sender, SqlInfoMessageEventArgs e)
@@ -129,19 +147,19 @@ namespace TaskBackup
             }
         }
 
-        public class FTPTransfBackup
+        public class FTPTransf
         {
-            public void Transf(string backFileName)
+            public void Transf(string fileName)
             {
 
-                _logger.Info("Tranf FTP - Zip Backup - Inicio");
+                _logger.Info("Transf FTP - Zip Backup - Begin");
 
                 FileStream fs = null;
                 Stream rs = null;
 
                 try
                 {
-                    string file = backFileName;
+                    string file = fileName;
                     string uploadFileName = new FileInfo(file).Name;
                     string uploadUrl = ConfigurationManager.AppSettings["FTPUrl"];
                     fs = new FileStream(file, FileMode.Open, FileAccess.Read);
@@ -185,15 +203,15 @@ namespace TaskBackup
                     }
                 }
 
-                _logger.Info("Tranf FTP - Zip Backup - Fim");
+                _logger.Info("Transf FTP - Zip Backup - End");
 
             }
 
 
-            public void CleanupBackupOlder(string nomeBackup, string nomeUltimoBackup)
+            public void CleanupBackupOlder(string nameBackup, string nameLastBackup)
             {
 
-                _logger.Info("Limpeza FTP - Inicio");
+                _logger.Info("Cleanup FTP - Begin");
 
                 string url = ConfigurationManager.AppSettings["FTPUrl"];
 
@@ -219,16 +237,16 @@ namespace TaskBackup
 
                 foreach (var arquivo in arquivos)
                 {
-                    if (arquivo.Contains(nomeBackup))
+                    if (arquivo.Contains(nameBackup))
                     {
-                        if (!arquivo.Contains(nomeUltimoBackup))
+                        if (!arquivo.Contains(nameLastBackup))
                         {
                             DeleteFileOnServer(arquivo);
                         }
                     }
                 }
 
-                _logger.Info("Limpeza FTP - FIM");
+                _logger.Info("Cleanup FTP - End");
             }
 
 
@@ -247,27 +265,27 @@ namespace TaskBackup
 
 
                 FtpWebResponse response = (FtpWebResponse)request.GetResponse();
-                //Console.WriteLine("Delete status: {0}", response.StatusDescription);
+               
                 response.Close();
 
                 return true;
             }
         }
 
-        public class ZipFileBackup
+        public class ZipFile
         {
-            public void ZipBackup(string backupFileName, string backupZipFileName)
+            public void Compress(string fileName, string zipFileName)
             {
-                _logger.Info("Zip Backup - Inicio");
+                _logger.Info("Zip - Begin");
 
-                FileInfo fileToCompress = new FileInfo(backupFileName);
+                FileInfo fileToCompress = new FileInfo(fileName);
 
                 using (FileStream originalFileStream = fileToCompress.OpenRead())
                 {
                     if ((File.GetAttributes(fileToCompress.FullName) &
                        FileAttributes.Hidden) != FileAttributes.Hidden & fileToCompress.Extension != ".gz")
                     {
-                        using (FileStream compressedFileStream = File.Create(backupZipFileName))
+                        using (FileStream compressedFileStream = File.Create(zipFileName))
                         {
                             using (GZipStream compressionStream = new GZipStream(compressedFileStream,
                                CompressionMode.Compress))
@@ -279,30 +297,30 @@ namespace TaskBackup
                     }
                 }
 
-                _logger.Info("Zip Backup - Fim");
+                _logger.Info("Zip - End");
             }
         }
 
-        public class DirectoryBackupCleanup
+        public class DirectoryCleanup
         {
 
             /// <summary>
-            /// Limpa todos os arquivos anterios a execução do backup
+            /// Cleaning all files before the current execution
             /// </summary>
-            /// <param name="backupDirectory"></param>
-            /// <param name="dataAtualNome"></param>
-            public void DirectoryCleanupOlder(string backupDirectory, string dataAtualNome )
+            /// <param name="directory"></param>
+            /// <param name="currentName">The file that cannot be deleted</param>
+            public void DirectoryCleanupOlder(string directory, string currentName )
             {
                 try
                 {
-                    _logger.Info("Limpeza Diretorio Antigos - Inicio");
+                    _logger.Info("Cleaning Older Files - Begin");
 
-                    var Dir = new DirectoryInfo(backupDirectory);
-                    // Busca automaticamente todos os arquivos em todos os subdiretórios
+                    var Dir = new DirectoryInfo(directory);
+                    
                     FileInfo[] Files = Dir.GetFiles("*", SearchOption.AllDirectories);
                     foreach (FileInfo file in Files)
                     {
-                        if (!file.Name.Contains(dataAtualNome))
+                        if (!file.Name.Contains(currentName))
                             file.Delete();
                     }
 
@@ -310,42 +328,46 @@ namespace TaskBackup
                 }
                 catch (Exception ex)
                 {
-                    _logger.Error(ex, "Erro na limpeza de diretório local");
+                    _logger.Error(ex, "Error cleaning local folder");
                 }
                 finally
                 {
-                    _logger.Info("Limpeza Diretorio Antigos - FIm");
+                    _logger.Info("Cleaning Older Files - End");
                 }
 
 
             }
 
-            public void DirectoryCleanupBeforeBackup(string backupDirectory, string dataAtualNome)
+            /// <summary>
+            /// Delete the file that already exists
+            /// </summary>
+            /// <param name="directory"></param>
+            /// <param name="currentName">the file that will be delete</param>
+            public void DeleteFileAlreadyExists(string directory, string currentName)
             {
                 try
                 {
-                    _logger.Info("Limpeza de diretório - Inicio");
+                    _logger.Info("Delete file already exists - Begin");
 
-                    var Dir = new DirectoryInfo(backupDirectory);
-                    // Busca automaticamente todos os arquivos em todos os subdiretórios
+                    var Dir = new DirectoryInfo(directory);
+                  
                     FileInfo[] Files = Dir.GetFiles("*", SearchOption.AllDirectories);
                     foreach (FileInfo file in Files)
                     {
-                        if (file.Name.Contains(dataAtualNome))
+                        if (file.Name.Contains(currentName))
                             file.Delete();
                     }
 
                 }
                 catch (Exception ex)
                 {
-                    _logger.Error(ex, "Erro na limpeza de diretório do ftp");
+                    _logger.Error(ex, "Delete file already exists");
                 }
                 finally
                 {
-                    _logger.Info("Limpeza de diretório - Fim");
-
+                    _logger.Info("Delete file already exists - End");
                 }
-                
+
             }
         }
         

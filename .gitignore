@@ -1,0 +1,12 @@
+
+src/.vs/TaskBackup/v17/.suo
+
+*.lock
+
+src/packages/
+
+src/TaskBackup/bin/
+
+src/TaskBackup/obj/
+
+*.vsidx
