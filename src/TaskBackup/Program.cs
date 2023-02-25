@@ -1,5 +1,4 @@
-﻿using Microsoft.SqlServer.Management.Smo;
-using NLog;
+﻿using NLog;
 using System;
 using System.Configuration;
 using System.Data.SqlClient;

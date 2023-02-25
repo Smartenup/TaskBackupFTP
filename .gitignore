@@ -1,5 +1,5 @@
 
-src/.vs/TaskBackup/v17/.suo
+
 
 *.lock
 
@@ -10,3 +10,6 @@ src/TaskBackup/bin/
 src/TaskBackup/obj/
 
 *.vsidx
+/.vs/TaskBackupFTP/v17
+/.vs
+/src/.vs/TaskBackup/v17
